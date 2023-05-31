@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="fragment"
+            type="com.example.myinfo.RegistrationFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        tools:context=".RegistrationFragment">
+
+        <TextView
+            android:id="@+id/profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/metropolis_bold"
+            android:text="@string/register"
+            android:textColor="@color/mainText"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/userProfileImage"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_profile"
+            app:civ_border_color="@color/primary"
+            app:civ_border_width="2.6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile"
+            android:onClick="@{()->fragment.setProfilePhoto()}"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/addNewUserProfileImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15.60dp"
+            android:layout_marginBottom="7.80dp"
+            android:src="@drawable/ic_add"
+            app:layout_constraintBottom_toBottomOf="@+id/userProfileImage"
+            app:layout_constraintEnd_toEndOf="@+id/userProfileImage" />
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/addNewUserProfileImage">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/nameEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:paddingHorizontal="20dp"
+                android:textColor="@color/mainText"
+                android:background="@drawable/edit_text_bg"
+                android:fontFamily="@font/metropolis_regular"
+                android:hint="@string/hint_name"
+                android:inputType="textPersonName"
+                android:maxLines="1" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/location"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/genderEt"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textSize="15sp"
+                    android:textColor="@color/mainText"
+                    android:background="@drawable/edit_text_bg"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/hint_gender"
+                    android:paddingHorizontal="20dp"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/ageEt" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/ageEt"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textSize="15sp"
+                    android:paddingHorizontal="20dp"
+                    android:textColor="@color/mainText"
+                    android:background="@drawable/edit_text_bg"
+                    android:fontFamily="@font/metropolis_regular"
+                    android:hint="@string/hint_age"
+                    android:inputType="number"
+                    android:maxLines="1"
+                    android:maxLength="2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/genderEt" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/phoneEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="20dp"
+                android:textColor="@color/mainText"
+                android:background="@drawable/edit_text_bg"
+                android:fontFamily="@font/metropolis_regular"
+                android:hint="@string/hint_number"
+                android:maxLength="10"
+                android:inputType="number"/>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/emailEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:textColor="@color/mainText"
+                android:paddingHorizontal="20dp"
+                android:background="@drawable/edit_text_bg"
+                android:fontFamily="@font/metropolis_regular"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/addressEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:paddingHorizontal="20dp"
+                android:textColor="@color/mainText"
+                android:background="@drawable/edit_text_bg"
+                android:fontFamily="@font/metropolis_regular"
+                android:hint="@string/hint_address"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_marginTop="10dp"
+                android:id="@+id/countryEt"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="15sp"
+                android:paddingHorizontal="20dp"
+                android:textColor="@color/mainText"
+                android:background="@drawable/edit_text_bg"
+                android:fontFamily="@font/metropolis_regular"
+                android:hint="@string/hint_country"
+                android:inputType="text"
+                android:maxLines="1" />
+
+            <CheckBox
+                android:id="@+id/checkBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/terms_and_conditions"
+                android:layout_marginStart="10dp"
+                android:checked="false"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/signUpBtn_signUpPage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                android:elevation="10dp"
+                android:onClick="@{()->fragment.submitUserInfo()}"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

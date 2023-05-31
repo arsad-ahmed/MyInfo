@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MyInfo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/background</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/primary</item>
+        <item name="colorSecondaryVariant">@color/sale</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+        <item name="android:statusBarColor" >@android:color/transparent</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowLightStatusBar" >false</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.MyInfo">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+</resources>
